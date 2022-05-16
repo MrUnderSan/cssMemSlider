@@ -1,0 +1,150 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 60%;
+	background-color: #000;
+}
+.slider-items, .slider-labels {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+.slider-item {
+	display: block;
+	float: left;
+
+}
+
+.slider-img {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.slider-descr {
+	width: 100%;
+	color: #fff;
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	font-size: 20px;
+}
+
+.slider-wrapper {
+	width: 100%;
+	position: relative;
+	padding-bottom: 65%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.slider-items {
+	width: 400%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	z-index: 1;
+	transition: left .5s ease-out;
+	-o-transition: left .5s ease-out;
+	-ms-transition: left .5s ease-out;
+	-moz-transition: left .5s ease-out;
+	-webkit-transition: left .5s ease-out;
+}
+.slider-item {
+	width: 25%;
+	height: 100%;
+	color: white;
+}
+
+.slider-labels {
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+.slider-selector {
+	display: none;
+}
+.slider-label {
+	display: inline-block;
+}
+.slider-label label {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #cb3939;
+	display: block;
+	cursor: pointer;
+	border: 3px solid #cb3939;
+
+}
+
+.slider-label label:hover {
+	background-color: white; 
+}
+
+#slide1:checked ~ .slider-items {
+	left: 0;
+}
+#slide1:checked ~ .slider-labels .slider-label:nth-child(1) label:hover {
+	border: 3px solid white;
+}
+#slide1:checked ~ .slider-labels .slider-label:nth-child(1) label {
+	background-color: black;
+}
+#slide2:checked ~ .slider-items {
+	left: -100%;
+}
+#slide2:checked ~ .slider-labels .slider-label:nth-child(2) label:hover {
+	border: 3px solid white;
+}
+#slide2:checked ~ .slider-labels .slider-label:nth-child(2) label {
+	background-color: black;
+}
+#slide3:checked ~ .slider-items {
+	left: -200%;
+}
+#slide3:checked ~ .slider-labels .slider-label:nth-child(3) label:hover {
+	border: 3px solid white;
+}
+#slide3:checked ~ .slider-labels .slider-label:nth-child(3) label {
+	background-color: black;
+}
+#slide4:checked ~ .slider-items {
+	left: -300%;
+}
+#slide4:checked ~ .slider-labels .slider-label:nth-child(4) label:hover {
+	border: 3px solid white;
+}
+#slide4:checked ~ .slider-labels .slider-label:nth-child(4) label {
+	background-color: black;
+}
+
+@media (max-width: 768px) {
+
+	body {
+		width: 90%;
+	}
+
+	.slider-labels {
+		justify-content: center;
+		
+		bottom: +30px;	
+	}
+
+	.slider-wrapper {
+		padding-bottom: 75%;
+	}
+
+	.slider-descr {
+		font-size: 15px;
+	}
+
+}
